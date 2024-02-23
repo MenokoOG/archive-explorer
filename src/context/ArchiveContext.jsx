@@ -7,7 +7,7 @@ export const ArchiveProvider = ({ children }) => {
   const [result, setResult] = useState(null);
 
   const checkArchive = async (url, timestamp) => {
-    const apiUrl = `http://archive.org/wayback/available?url=${url}${timestamp ? `&timestamp=${timestamp}` : ''}`;
+    const apiUrl = `https://archive.org/wayback/available?url=${url}${timestamp ? `&timestamp=${timestamp}` : ''}`;
     try {
       const response = await axios.get(apiUrl);
       setResult(response.data);
